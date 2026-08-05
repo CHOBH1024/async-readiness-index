@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://pomyjo.com/async-readiness-index/sitemap.xml
+Sitemap: https://pomyjo.com/async-readiness-index/rss.xml
