@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
-Sitemap: https://pomyjo.com/async-readiness-index/sitemap.xml
-Sitemap: https://pomyjo.com/async-readiness-index/rss.xml
+
+# 검색엔진 크롤러 명시
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: NaverBot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+Sitemap: https://async-readiness-index.pomyjo.com/sitemap.xml

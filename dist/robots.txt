@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://pomyjo.com/async-readiness-index/sitemap.xml
-Sitemap: https://pomyjo.com/async-readiness-index/rss.xml
+Sitemap: https://async-readiness-index.pomyjo.com/sitemap.xml
