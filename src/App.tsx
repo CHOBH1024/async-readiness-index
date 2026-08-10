@@ -122,7 +122,7 @@ export function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-between">
       {/* Header */}
-      <header className="border-b border-slate-800 bg-gradient-to-r from-indigo-900 to-slate-900/80 px-6 py-4 flex justify-between items-center max-w-4xl mx-auto w-full sticky top-0 z-50 backdrop-blur-sm">
+      <header className="border-b border-slate-800 bg-slate-900/80 px-6 py-4 flex justify-between items-center max-w-4xl mx-auto w-full sticky top-0 z-50">
         <div className="flex items-center gap-2">
           <Zap className="w-5 h-5 text-indigo-400" />
           <span className="font-extrabold text-base text-white tracking-tight uppercase">async-readiness-index</span>
@@ -175,17 +175,16 @@ export function App() {
                 </div>
               </div>
             ) : (
-              <div className="bg-white/10 border border-white/20 backdrop-blur-lg p-8 rounded-2xl text-center space-y-6 transition-transform transform hover:scale-105">
+              <div className="bg-slate-900 border border-indigo-500/30 p-8 rounded-2xl text-center space-y-6">
                 <div className="text-6xl">{result.emoji}</div>
                 <div>
                   <span className="px-3 py-1 bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-bold rounded-full">진단 결과</span>
                   <h1 className="text-2xl font-bold text-white my-2">{result.nameKo}</h1>
                   <p className="text-xs text-slate-300 max-w-md mx-auto">{result.descKo}</p>
-                  <p className="text-xs text-slate-400 italic">이 결과는 행동심리학과 조직문화 연구에 기반하여 도출되었습니다.</p>
                 </div>
 
                 {/* Online Result Share Box */}
-                <div className="p-4 bg-white/5 border border-white/20 rounded-xl text-left space-y-3 backdrop-blur-sm">
+                <div className="p-4 bg-slate-950 border border-slate-800 rounded-xl text-left space-y-3">
                   <h3 className="text-xs font-bold text-indigo-400 flex items-center gap-1">
                     <Share2 className="w-3.5 h-3.5" /> 이 결과를 다른 접속자들과 실시간 공유하기
                   </h3>
@@ -203,7 +202,9 @@ export function App() {
                     onChange={e => setShareNote(e.target.value)}
                     className="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-xs text-white"
                   />
-                  <button onClick={handleShareResult} className="w-full py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg text-xs transition transform hover:scale-105">조직 리더와 공유하고 변화를 이끌어보세요 🚀</button>
+                  <button onClick={handleShareResult} className="w-full py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg text-xs transition">
+                    라이브 피드에 내 진단 결과 등록하기 🚀
+                  </button>
                 </div>
               </div>
             )}
@@ -274,11 +275,29 @@ export function App() {
           </div>
         )}
       </main>
-
-      <footer className="border-t border-slate-800 py-4 text-center text-[10px] text-slate-500">
-        © 2026 async-readiness-index. Live Online Community Connected. Powered by Pomyjo.
-      </footer>
       {/* SEO 본문 */}
+      <div style={{maxWidth:720,margin:'48px auto 0',padding:'0 24px'}}>
+        <div style={{background:'rgba(255,255,255,.03)',border:'1px solid rgba(255,255,255,.08)',borderRadius:20,padding:32}}>
+          <h3 style={{fontSize:20,fontWeight:800,color:'#fff',margin:'0 0 20px'}}>비동기 레디니스 지수: 비동기 전환 준비도 가이드</h3>
+          <div style={{marginBottom:24}}>
+            <h4 style={{color:'#818cf8',fontSize:15,margin:'0 0 8px'}}>📌 비동기 전환 준비도 이해하기</h4>
+            <p style={{color:'#cbd5e1',fontSize:14,lineHeight:1.8,margin:0}}>비동기 레디니스 지수은 비동기 전환 준비도를 과학적으로 측정하는 무료 자가진단 도구입니다. 20개 문항을 통해 당신의 현재 상태를 객관적으로 분석하고, 맞춤형 개선 전략을 제시합니다. 진단은 3-5분이면 완료되며 결과는 즉시 제공됩니다.</p>
+          </div>
+          <div style={{marginBottom:24}}>
+            <h4 style={{color:'#818cf8',fontSize:15,margin:'0 0 8px'}}>📌 조직 문화 실천 전략</h4>
+            <p style={{color:'#cbd5e1',fontSize:14,lineHeight:1.8,margin:0}}>전문가들이 권장하는 조직 문화 핵심 원칙을 단계별로 적용해보세요. 작은 습관부터 시작하면 꾸준함을 유지하기 쉽습니다. 매일 10분씩 실천 가능한 루틴을 만들어보세요.</p>
+          </div>
+          <div style={{marginBottom:24}}>
+            <h4 style={{color:'#818cf8',fontSize:15,margin:'0 0 8px'}}>📌 전문가 팁과 주의사항</h4>
+            <p style={{color:'#cbd5e1',fontSize:14,lineHeight:1.8,margin:0}}>비동기 전환 준비도 관련 연구와 사례를 바탕으로, 당신의 상황에 가장 효과적인 전략을 소개합니다. 결과는 참고용이며, 지속적인 어려움이 있다면 전문가와 상담하세요.</p>
+          </div>
+          <h3 style={{fontSize:17,fontWeight:800,color:'#fff',margin:'0 0 16px'}}>❓ 자주 묻는 질문 (FAQ)</h3>
+          <div style={{marginBottom:14}}>
+            <h4 style={{color:'#e2e8f0',fontSize:14,marginBottom:6}}>비동기 레디니스 지수 테스트는 정확한가요?</h4>
+            <p style={{color:'#94a3b8',fontSize:13,lineHeight:1.7,margin:0}}>본 테스트는 심리학 연구와 임상 기준을 참고한 자기보고식 선별 도구입니다. 공식 진단을 대체하지 않으며, 참고용으로 활용하세요.</p>
+          </div>
+          <div style={{marginBottom:14}}>
+            <h4 style={{color:'#e2e8f0',fontSize:14,marginBottom:6}}>테스트는 몇 분 정도 걸리나요?</h4>
             <p style={{color:'#94a3b8',fontSize:13,lineHeight:1.7,margin:0}}>약 3-5분이 소요되며 20개 문항으로 구성됩니다. 결과는 제출 즉시 제공됩니다.</p>
           </div>
           <div style={{marginBottom:14}}>
@@ -291,6 +310,28 @@ export function App() {
           </div>
         </div>
       </div>
+      <footer style={{ borderTop: '1px solid #1e293b', padding: '24px 16px', textAlign: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 10, flexWrap: 'wrap', marginBottom: 8 }}>
+          <button
+            onClick={() => {
+              const url = location.href;
+              if (navigator.share) { navigator.share({ title: document.title, url }); }
+              else { navigator.clipboard?.writeText(url).then(() => alert('링크가 복사되었습니다! 공유해보세요 🎉')); }
+            }}
+            style={{ padding: '8px 18px', borderRadius: 999, background: '#6366f1', color: '#fff', fontSize: 12, fontWeight: 700, border: 'none', cursor: 'pointer' }}
+          >
+            📤 결과 공유하기
+          </button>
+          <a
+            href="https://hub.pomyjo.com"
+            style={{ padding: '8px 18px', borderRadius: 999, border: '1px solid #334155', color: '#94a3b8', fontSize: 12, fontWeight: 700, textDecoration: 'none' }}
+          >
+            🧠 더 많은 진단 테스트
+          </a>
+        </div>
+        <p style={{ fontSize: 11, color: '#64748b', margin: 0 }}>© 2026 POMYJO · <a href="https://hub.pomyjo.com" style={{ color: '#8b5cf6' }}>POMYJO 진단 허브</a> · 결과는 참고용입니다</p>
+      </footer>
+
     </div>
   );
 }
